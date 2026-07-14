@@ -1,0 +1,68 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.14, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+../tests/test_outputs.py FFF                                             [100%]
+
+=================================== FAILURES ===================================
+__________________________ test_report_is_valid_json ___________________________
+
+    def test_report_is_valid_json():
+        """Success criterion 1: /app/report.json exists and contains valid JSON."""
+>       report = _load_report()
+                 ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+>       assert REPORT_PATH.exists(), f"{REPORT_PATH} was not created"
+E       AssertionError: /app/report.json was not created
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:17: AssertionError
+__________________________ test_request_and_ip_counts __________________________
+
+    def test_request_and_ip_counts():
+        """Success criterion 2: total_requests and unique_ips match the log."""
+>       report = _load_report()
+                 ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+>       assert REPORT_PATH.exists(), f"{REPORT_PATH} was not created"
+E       AssertionError: /app/report.json was not created
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:17: AssertionError
+________________________________ test_top_path _________________________________
+
+    def test_top_path():
+        """Success criterion 3: top_path matches the most-requested path."""
+>       report = _load_report()
+                 ^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _load_report():
+>       assert REPORT_PATH.exists(), f"{REPORT_PATH} was not created"
+E       AssertionError: /app/report.json was not created
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:17: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_report_is_valid_json - AssertionError: ...
+FAILED ../tests/test_outputs.py::test_request_and_ip_counts - AssertionError:...
+FAILED ../tests/test_outputs.py::test_top_path - AssertionError: /app/report....
+============================== 3 failed in 0.04s ===============================

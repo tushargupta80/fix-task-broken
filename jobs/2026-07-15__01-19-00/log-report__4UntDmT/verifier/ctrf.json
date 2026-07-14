@@ -1,0 +1,50 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 3,
+            "passed": 2,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1784058555.9582462,
+            "stop": 1784058555.9835632
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_report_is_valid_json",
+                "status": "passed",
+                "duration": 0.0007050310000007443,
+                "start": 1784058555.9734948,
+                "stop": 1784058555.9748342,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_request_and_ip_counts",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00046859900000129073,
+                "start": 1784058555.9750645,
+                "stop": 1784058555.9816408,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_request_and_ip_counts():\n        \"\"\"Success criterion 2: total_requests and unique_ips match the log.\"\"\"\n        report = _load_report()\n>       assert report.get(\"total_requests\") == EXPECTED_TOTAL_REQUESTS, (\n            f\"expected total_requests={EXPECTED_TOTAL_REQUESTS}, got {report.get('total_requests')!r}\"\n        )\nE       AssertionError: expected total_requests=6, got 105\nE       assert 105 == 6\nE        +  where 105 = <built-in method get of dict object at 0x784c3f5a3480>('total_requests')\nE        +    where <built-in method get of dict object at 0x784c3f5a3480> = {'top_path': '/index.html', 'total_requests': 105, 'unique_ips': 3}.get\n\n/tests/test_outputs.py:31: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_top_path",
+                "status": "passed",
+                "duration": 0.00028267899999789847,
+                "start": 1784058555.9817786,
+                "stop": 1784058555.9831052,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

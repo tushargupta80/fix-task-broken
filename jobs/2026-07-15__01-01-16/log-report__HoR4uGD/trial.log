@@ -1,0 +1,17 @@
+Skipping image OS validation for hb__d707adc0aefa640cb99023d690ae559d: docker inspect returned 1
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "C:\Users\TUSHAR\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+  File "C:\Users\TUSHAR\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1025, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "C:\Users\TUSHAR\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1010, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "C:\Users\TUSHAR\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+  File "C:\Users\TUSHAR\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 631, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__hor4ugd__env --project-directory C:\Users\TUSHAR\Downloads\fix-task-broken\log-report\environment -f C:\Users\TUSHAR\AppData\Local\Temp\tmpzh49u56w\log-report__HoR4uGD__env-docker-compose-resources.json -f C:\Users\TUSHAR\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\TUSHAR\AppData\Local\Temp\tmphsxvqcjw\docker-compose-mounts.json cp main:/app/report.json jobs\2026-07-15__01-01-16\log-report__HoR4uGD\artifacts\app\report.json. Return code: 1. Stdout:  log-report__hor4ugd__env-main-1 Copying log-report__hor4ugd__env-main-1:/app/report.json to jobs\2026-07-15__01-01-16\log-report__HoR4uGD\artifacts\app\report.json
+Error response from daemon: Could not find the file /app/report.json in container fe95290b3fcc63db06732758e26d52e4d99aaf88e27b4288b58a18438165115a
+. Stderr: None. 

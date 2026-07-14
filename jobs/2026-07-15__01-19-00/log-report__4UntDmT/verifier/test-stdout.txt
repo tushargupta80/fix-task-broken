@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.14, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+../tests/test_outputs.py .F.                                             [100%]
+
+=================================== FAILURES ===================================
+__________________________ test_request_and_ip_counts __________________________
+
+    def test_request_and_ip_counts():
+        """Success criterion 2: total_requests and unique_ips match the log."""
+        report = _load_report()
+>       assert report.get("total_requests") == EXPECTED_TOTAL_REQUESTS, (
+            f"expected total_requests={EXPECTED_TOTAL_REQUESTS}, got {report.get('total_requests')!r}"
+        )
+E       AssertionError: expected total_requests=6, got 105
+E       assert 105 == 6
+E        +  where 105 = <built-in method get of dict object at 0x784c3f5a3480>('total_requests')
+E        +    where <built-in method get of dict object at 0x784c3f5a3480> = {'top_path': '/index.html', 'total_requests': 105, 'unique_ips': 3}.get
+
+/tests/test_outputs.py:31: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_report_is_valid_json
+PASSED ../tests/test_outputs.py::test_top_path
+FAILED ../tests/test_outputs.py::test_request_and_ip_counts - AssertionError:...
+========================= 1 failed, 2 passed in 0.03s ==========================
